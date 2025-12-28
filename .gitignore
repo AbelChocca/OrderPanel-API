@@ -1,3 +1,6 @@
+*venv
+real_time_orders/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
