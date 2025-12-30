@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import Optional, Union
+from uuid import uuid4
 
 class OrderEntity:
     def __init__(
@@ -21,3 +22,6 @@ class OrderEntity:
         self.status: str = status
         self.id: Union[int, None] = id
         self.product_id: Union[int, None] = product_id
+
+    def generate_tracking_token(self, user_id: Optional[int] = None) -> str:
+        return f"order-{uuid4()}-{user_id if user_id is not None else 0}"
