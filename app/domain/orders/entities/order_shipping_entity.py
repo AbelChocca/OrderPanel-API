@@ -4,6 +4,7 @@ from typing import Optional, Union
 class OrderShippingEntity:
     def __init__(
             self,
+            *,
             full_name: str,
             phone: str,
             address_line: str,
@@ -25,4 +26,26 @@ class OrderShippingEntity:
         self.delivery_notes: str = delivery_notes
         self.id: Union[int, None] = id
         self.order_id: Union[int, None] = order_id
-        
+
+    @classmethod
+    def create_new(
+        cls,
+        full_name: str,
+        phone: str,
+        address_line: str,
+        city: str,
+        region: str,
+        country: str,
+        postal_code: Optional[int] = None,
+        delivery_notes: Optional[str] = None
+        ):
+        return cls(
+            full_name=full_name,
+            phone=phone,
+            address_line=address_line,
+            city=city,
+            region=region,
+            country=country,
+            postal_code=postal_code,
+            delivery_notes=delivery_notes
+        )
