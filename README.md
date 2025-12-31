@@ -7,7 +7,7 @@ Backend API implement with clean architecture, strict typing and ready to scalin
 Many APi's of e-commerce or orders management start with a simple CRUD and they turn difficult to maintain when scaling
 This project search on resolving this problema from beginning, separating domain, persistent and application, and preparing the system to scaling to events.
 
-# Some case problems
+### Some case problems
 
 For example, when we have to create an order, we starting to save the started-info on the database and call other services like S3 and ProductService for execute some dependencies, but 
 when the use-case need to scaling, it's difficult to orchestrate, debug and test the use-case and all the services that intervene
