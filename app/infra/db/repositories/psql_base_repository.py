@@ -20,7 +20,7 @@ class BaseRepository(Generic[E, M]):
             mapper: BaseMapper[E, M]
             ):
         self.db_session: AsyncSession = db_session
-        self.model_table: Type[SQLModel] = model_table
+        self.model_table: Type[M] = model_table
         self.mapper: BaseMapper = mapper
 
     async def get_model_but_not_raises(self, model_id: int) -> Optional[M]:
