@@ -26,7 +26,7 @@ class OrderEntity:
         self.product_id: Union[int, None] = product_id
     
     @classmethod
-    def create_new(cls, quantity: int, unit_price: int, user_id: Optional[int] = None):
+    def create_new(cls, quantity: int, unit_price: int, product_id: int, user_id: Optional[int] = None):
         if quantity <= 0:
             raise ValueError("Quantity must be greater than zero")
 
@@ -43,7 +43,8 @@ class OrderEntity:
             total_price=total,
             created_at=datetime.now(timezone.utc),
             status="pending",
-            tracking_token=tracking_token
+            tracking_token=tracking_token,
+            product_id=product_id
         )
     
     @classmethod
