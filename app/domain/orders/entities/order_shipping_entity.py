@@ -1,4 +1,3 @@
-
 from typing import Optional, Union
 
 class OrderShippingEntity:
@@ -7,6 +6,7 @@ class OrderShippingEntity:
             *,
             full_name: str,
             phone: str,
+            email: str,
             address_line: str,
             city: str,
             region: str,
@@ -18,6 +18,7 @@ class OrderShippingEntity:
             ):
         self.full_name: str = full_name
         self.phone: str = phone
+        self.email: str = email
         self.address_line: str = address_line
         self.city: str = city
         self.region: str = region
@@ -32,6 +33,7 @@ class OrderShippingEntity:
         cls,
         full_name: str,
         phone: str,
+        email: str,
         address_line: str,
         city: str,
         region: str,
@@ -41,6 +43,7 @@ class OrderShippingEntity:
         ):
         return cls(
             full_name=full_name,
+            email=email,
             phone=phone,
             address_line=address_line,
             city=city,

@@ -42,7 +42,7 @@ class OrderEntity:
             unit_price=unit_price,
             total_price=total,
             created_at=datetime.now(timezone.utc),
-            status="pending",
+            status="PENDING",
             tracking_token=tracking_token,
             product_id=product_id
         )
