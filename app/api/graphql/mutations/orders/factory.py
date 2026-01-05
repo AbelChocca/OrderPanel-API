@@ -3,8 +3,9 @@ from typing import Any
 
 from app.api.graphql.mutations.orders.input import CreateOrderInput
 
-from app.application.orders.cases.createOrder import CreateOrderCase
+from app.application.orders.commands.createOrder import CreateOrderCase
 
+# TODO: there was incomplete mutation
 @type
 class OrderMutation:
     @field
