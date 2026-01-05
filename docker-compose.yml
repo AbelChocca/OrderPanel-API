@@ -1,6 +1,6 @@
 
 services:
-  orders_panel_db:
+  orders-db:
     image: postgres:15
     restart: always # Esto le dice a Docker que si el contenedor falla por alguna razón (por ejemplo, después de un reinicio del sistema), debe intentar reiniciarlo automáticamente.
     env_file:
@@ -10,7 +10,7 @@ services:
     ports:
       - "5434:5432"
   
-  orders_panel_redis:
+  orders-redis:
     image: redis:latest
     restart: always
     ports:
@@ -19,7 +19,7 @@ services:
       redis-server
       --maxmemory 256mb
       --maxmemory-policy allkeys-lfu
-  orders_panel_app:
+  orders-app:
     build: 
       context: .
       dockerfile: Dockerfile
