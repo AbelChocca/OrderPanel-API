@@ -1,5 +1,5 @@
 from typing import Dict, Callable, Optional
-from aiokafka import ConsumerRecord
+from aiokafka.structs import ConsumerRecord
 
 class KafkaEventRouter:
     def __init__(

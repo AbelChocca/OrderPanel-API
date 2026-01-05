@@ -1,4 +1,4 @@
-from aiokafka import AIOKafkaConsumer
+from aiokafka.consumer import AIOKafkaConsumer
 from typing import Iterable
 
 from app.infra.messaging.kafka.clients.event_router import KafkaEventRouter
